@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "cars": "Flotte",
+    "about": "À Propos",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Découvrez le Maroc",
+    "titleLine2": "Au Volant",
+    "subtitle": "Location de voiture premium à tarifs compétitifs. Des montagnes de l'Atlas au Sahara — votre voyage commence ici.",
+    "cta": "Voir Notre Flotte",
+    "cta2": "Obtenir un Devis"
+  },
+  "cars": {
+    "title": "Notre Flotte",
+    "all": "Tous",
+    "economy": "Économique",
+    "compact": "Compacte",
+    "suv": "SUV",
+    "sedan": "Berline",
+    "perDay": "/ jour",
+    "bookNow": "Réserver",
+    "viewDetails": "Voir Détails",
+    "manual": "Manuelle",
+    "automatic": "Automatique",
+    "petrol": "Essence",
+    "diesel": "Diesel",
+    "seats": "places",
+    "ac": "Clim",
+    "noResults": "Aucun véhicule trouvé pour cette catégorie."
+  },
+  "about": {
+    "title": "Notre Histoire",
+    "subtitle": "Née à Marrakech, MarocDrive sert les voyageurs et locaux depuis 2016 avec une flotte de véhicules bien entretenus à des prix transparents.",
+    "values": "Pourquoi Nous Choisir",
+    "v1": "Tarifs Transparents",
+    "v1d": "Aucun frais caché. Le prix affiché est le prix final.",
+    "v2": "Flotte Fiable",
+    "v2d": "Tous nos véhicules sont régulièrement entretenus et en parfait état.",
+    "v3": "Support 24/7",
+    "v3d": "Notre équipe est toujours disponible par téléphone ou WhatsApp.",
+    "v4": "Location Flexible",
+    "v4d": "Journalier, hebdomadaire ou mensuel — nous nous adaptons.",
+    "stats1": "Véhicules",
+    "stats2": "Clients Satisfaits",
+    "stats3": "Années d'Expérience",
+    "stats4": "Assistance"
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "name": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "message": "Votre Message",
+    "send": "Envoyer",
+    "success": "Message envoyé ! Nous répondrons dans les 24 heures.",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "address": "Adresse",
+    "hours": "Horaires d'Ouverture",
+    "followUs": "Suivez-Nous"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "q1": "Quels documents sont nécessaires pour louer ?",
+    "a1": "Vous aurez besoin d'un permis de conduire valide depuis au moins 2 ans, d'un passeport ou carte nationale d'identité, et d'une carte de crédit pour la caution.",
+    "q2": "Quelle est la durée minimale de location ?",
+    "a2": "La location minimale est de 24 heures. Nous offrons des réductions attractives pour les réservations hebdomadaires et mensuelles.",
+    "q3": "Puis-je prendre la voiture dans une ville et la rendre dans une autre ?",
+    "a3": "Oui, les locations aller simple sont disponibles entre toutes les grandes villes marocaines pour un petit supplément.",
+    "q4": "L'assurance est-elle incluse dans le prix ?",
+    "a4": "L'assurance responsabilité civile de base est toujours incluse. Une couverture tous risques complète est disponible en option."
+  },
+  "booking": {
+    "title": "Demande de Réservation",
+    "pickup": "Date de départ",
+    "return": "Date de retour",
+    "city": "Ville de prise en charge",
+    "name": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "notes": "Notes supplémentaires",
+    "submit": "Envoyer la Demande",
+    "success": "Demande reçue ! Nous confirmons dans les 2 heures.",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "close": "Fermer",
+    "cities": {
+      "marrakech": "Marrakech",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "fes": "Fès"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "tagline": "Votre partenaire de confiance pour la location au Maroc."
+  },
+  "testimonials": "Témoignages Clients",
+  "stats": {
+    "vehicles": "30+ Véhicules",
+    "clients": "5 000+ Clients Satisfaits",
+    "years": "8+ Années d'Expérience",
+    "support": "Assistance 24/7"
+  }
+}

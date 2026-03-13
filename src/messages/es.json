@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "cars": "Flota",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Descubre Marruecos",
+    "titleLine2": "Al Volante",
+    "subtitle": "Alquiler premium de coches a precios competitivos. Desde el Atlas hasta el Sáhara — tu viaje comienza aquí.",
+    "cta": "Ver Nuestra Flota",
+    "cta2": "Obtener Presupuesto"
+  },
+  "cars": {
+    "title": "Nuestra Flota",
+    "all": "Todos",
+    "economy": "Económico",
+    "compact": "Compacto",
+    "suv": "SUV",
+    "sedan": "Sedán",
+    "perDay": "/ día",
+    "bookNow": "Reservar",
+    "viewDetails": "Ver Detalles",
+    "manual": "Manual",
+    "automatic": "Automático",
+    "petrol": "Gasolina",
+    "diesel": "Diésel",
+    "seats": "plazas",
+    "ac": "A/C",
+    "noResults": "No se encontraron vehículos para esta categoría."
+  },
+  "about": {
+    "title": "Nuestra Historia",
+    "subtitle": "Nacida en Marrakech, MarocDrive lleva sirviendo a viajeros y locales desde 2016 con una flota de vehículos bien mantenidos a precios transparentes.",
+    "values": "Por Qué Elegirnos",
+    "v1": "Precios Transparentes",
+    "v1d": "Sin cargos ocultos. El precio que ves es el que pagas.",
+    "v2": "Flota Fiable",
+    "v2d": "Todos nuestros vehículos se revisan regularmente y están en perfectas condiciones.",
+    "v3": "Soporte 24/7",
+    "v3d": "Nuestro equipo siempre está disponible por teléfono o WhatsApp.",
+    "v4": "Alquiler Flexible",
+    "v4d": "Diario, semanal o mensual — nos adaptamos a tus necesidades.",
+    "stats1": "Vehículos",
+    "stats2": "Clientes Felices",
+    "stats3": "Años de Experiencia",
+    "stats4": "Soporte"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "name": "Nombre Completo",
+    "email": "Email",
+    "phone": "Teléfono",
+    "message": "Tu Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado! Responderemos en 24 horas.",
+    "error": "Ocurrió un error. Por favor inténtalo de nuevo.",
+    "address": "Dirección",
+    "hours": "Horario de Atención",
+    "followUs": "Síguenos"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Qué documentos necesito para alquilar?",
+    "a1": "Necesitarás un carnet de conducir válido con al menos 2 años de antigüedad, pasaporte o DNI, y una tarjeta de crédito para el depósito.",
+    "q2": "¿Cuál es el período mínimo de alquiler?",
+    "a2": "El alquiler mínimo es de 24 horas. Ofrecemos descuentos atractivos para reservas semanales y mensuales.",
+    "q3": "¿Puedo recoger en una ciudad y devolver en otra?",
+    "a3": "Sí, los alquileres de ida están disponibles entre todas las ciudades marroquíes principales con un pequeño cargo adicional.",
+    "q4": "¿El seguro está incluido en el precio?",
+    "a4": "El seguro básico de responsabilidad civil siempre está incluido. La cobertura total está disponible como complemento asequible."
+  },
+  "booking": {
+    "title": "Solicitud de Reserva",
+    "pickup": "Fecha de recogida",
+    "return": "Fecha de devolución",
+    "city": "Ciudad de recogida",
+    "name": "Nombre Completo",
+    "email": "Email",
+    "phone": "Teléfono",
+    "notes": "Notas adicionales",
+    "submit": "Enviar Solicitud",
+    "success": "¡Solicitud recibida! Confirmaremos en 2 horas.",
+    "error": "Ocurrió un error. Por favor inténtalo de nuevo.",
+    "close": "Cerrar",
+    "cities": {
+      "marrakech": "Marrakech",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "fes": "Fez"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Tu socio de confianza para el alquiler de coches en Marruecos."
+  },
+  "testimonials": "Testimonios",
+  "stats": {
+    "vehicles": "30+ Vehículos",
+    "clients": "5.000+ Clientes Felices",
+    "years": "8+ Años de Experiencia",
+    "support": "Soporte 24/7"
+  }
+}
