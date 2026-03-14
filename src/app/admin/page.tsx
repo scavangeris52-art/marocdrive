@@ -36,6 +36,14 @@ export default function AdminPage() {
   const [bookings, setBookings] = useState<Booking[]>([])
   const [messages, setMessages] = useState(0)
 
+  // Change password
+  const [showPwd, setShowPwd]     = useState(false)
+  const [curPwd, setCurPwd]       = useState('')
+  const [newPwd, setNewPwd]       = useState('')
+  const [confirmPwd, setConfirmPwd] = useState('')
+  const [pwdMsg, setPwdMsg]       = useState<{ type: 'ok'|'err'; text: string } | null>(null)
+  const [pwdLoading, setPwdLoading] = useState(false)
+
   useEffect(() => {
     if (!session) return
     Promise.all([
@@ -48,6 +56,27 @@ export default function AdminPage() {
       setMessages(Array.isArray(m) ? m.length : 0)
     })
   }, [session])
+
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setPwdMsg(null)
+    if (newPwd !== confirmPwd) { setPwdMsg({ type: 'err', text: 'Les nouveaux mots de passe ne correspondent pas.' }); return }
+    setPwdLoading(true)
+    const res = await fetch('/api/admin/change-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ currentPassword: curPwd, newPassword: newPwd }),
+    })
+    const data = await res.json()
+    setPwdLoading(false)
+    if (res.ok) {
+      setPwdMsg({ type: 'ok', text: 'Mot de passe modifié avec succès !' })
+      setCurPwd(''); setNewPwd(''); setConfirmPwd('')
+      setTimeout(() => setShowPwd(false), 2000)
+    } else {
+      setPwdMsg({ type: 'err', text: data.error || 'Erreur inconnue.' })
+    }
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -110,12 +139,53 @@ export default function AdminPage() {
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <a href="/admin/cars" style={NAV_LINK}>Voitures</a>
           <a href="/admin/bookings" style={NAV_LINK}>Réservations</a>
+          <button onClick={() => { setShowPwd(!showPwd); setPwdMsg(null) }}
+            style={{ padding: '6px 14px', background: 'transparent', border: '1px solid #888', color: '#ccc', cursor: 'pointer', fontSize: '12px' }}>
+            🔑 Mot de passe
+          </button>
           <button onClick={() => signOut()}
             style={{ padding: '6px 14px', background: 'transparent', border: '1px solid #d4a44c', color: '#d4a44c', cursor: 'pointer', fontSize: '12px' }}>
             Déconnexion
           </button>
         </div>
       </div>
+
+      {/* ─── CHANGE PASSWORD PANEL ─── */}
+      {showPwd && (
+        <div style={{ background: '#1a2a40', borderBottom: '1px solid #d4a44c', padding: '24px' }}>
+          <div style={{ maxWidth: '440px', margin: '0 auto' }}>
+            <h3 style={{ color: '#d4a44c', margin: '0 0 16px', fontSize: '14px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Modifier le mot de passe</h3>
+            <form onSubmit={handleChangePassword} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { label: 'Mot de passe actuel', val: curPwd, set: setCurPwd },
+                { label: 'Nouveau mot de passe', val: newPwd, set: setNewPwd },
+                { label: 'Confirmer le nouveau mot de passe', val: confirmPwd, set: setConfirmPwd },
+              ].map(({ label, val, set }) => (
+                <div key={label}>
+                  <label style={{ display: 'block', fontSize: '11px', color: '#aaa', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</label>
+                  <input type="password" value={val} onChange={e => set(e.target.value)} required
+                    style={{ width: '100%', background: '#0a1628', border: '1px solid #444', color: 'white', padding: '9px 12px', fontSize: '14px', boxSizing: 'border-box' }} />
+                </div>
+              ))}
+              {pwdMsg && (
+                <p style={{ margin: 0, fontSize: '13px', color: pwdMsg.type === 'ok' ? '#4ade80' : '#f87171' }}>
+                  {pwdMsg.text}
+                </p>
+              )}
+              <div style={{ display: 'flex', gap: '10px', marginTop: '4px' }}>
+                <button type="submit" disabled={pwdLoading}
+                  style={{ padding: '9px 20px', background: '#d4a44c', color: '#0a1628', border: 'none', fontWeight: 700, cursor: 'pointer', fontSize: '13px' }}>
+                  {pwdLoading ? '...' : 'Enregistrer'}
+                </button>
+                <button type="button" onClick={() => { setShowPwd(false); setPwdMsg(null) }}
+                  style={{ padding: '9px 20px', background: 'transparent', border: '1px solid #555', color: '#aaa', cursor: 'pointer', fontSize: '13px' }}>
+                  Annuler
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <div style={{ padding: '32px 24px', maxWidth: '1300px', margin: '0 auto' }}>
         <h2 style={{ color: '#0a1628', fontFamily: 'Georgia, serif', marginBottom: '8px' }}>Tableau de bord</h2>
