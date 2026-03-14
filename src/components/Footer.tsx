@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <h3 className="text-xl font-bold tracking-widest text-white uppercase mb-2">
-            <span className="text-[#d4a44c]">Maroc</span>Drive
+            <span className="text-[#d4a44c]">Mimoun</span>RifCar
           </h3>
           <p className="text-white/60 text-sm">{t('tagline')}</p>
         </div>
@@ -41,8 +41,8 @@ export default function Footer() {
             <a href="tel:+212661234567" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
               <FaPhone size={12} /> +212 6 61 23 45 67
             </a>
-            <a href="mailto:contact@rafasurlalune.ma" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
-              <FaEnvelope size={12} /> contact@rafasurlalune.ma
+            <a href="mailto:contact@mimounrifcar.ma" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
+              <FaEnvelope size={12} /> contact@mimounrifcar.ma
             </a>
             <a
               href="https://wa.me/212661234567"
@@ -54,14 +54,14 @@ export default function Footer() {
             </a>
             <span className="flex items-start gap-2">
               <FaMapMarkerAlt size={12} className="mt-0.5 flex-shrink-0" />
-              123 Av. Mohammed V, Gueliz, Marrakech
+              15 Bd Mohammed V, Centre-ville, Nador 62000
             </span>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} RafaSurLaLune. {t('rights')}
+        © {new Date().getFullYear()} MimounRifCar. {t('rights')}
       </div>
     </footer>
   )

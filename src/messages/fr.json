@@ -33,7 +33,7 @@
   },
   "about": {
     "title": "Notre Histoire",
-    "subtitle": "Née à Marrakech, RafaSurLaLune sert les voyageurs et locaux depuis 2016 avec une flotte de véhicules bien entretenus à des prix transparents.",
+    "subtitle": "Née à Nador, MimounRifCar sert les voyageurs et locaux depuis 2016 avec une flotte de véhicules bien entretenus à des prix transparents.",
     "values": "Pourquoi Nous Choisir",
     "v1": "Tarifs Transparents",
     "v1d": "Aucun frais caché. Le prix affiché est le prix final.",
@@ -81,15 +81,18 @@
     "email": "Email",
     "phone": "Téléphone",
     "notes": "Notes supplémentaires",
+    "widgetTitle": "Réservez Votre Véhicule",
+    "search": "Rechercher",
     "submit": "Envoyer la Demande",
     "success": "Demande reçue ! Nous confirmons dans les 2 heures.",
     "error": "Une erreur est survenue. Veuillez réessayer.",
     "close": "Fermer",
     "cities": {
-      "marrakech": "Marrakech",
-      "casablanca": "Casablanca",
-      "agadir": "Agadir",
-      "fes": "Fès"
+      "nador": "Nador",
+      "oujda": "Oujda",
+      "berkane": "Berkane",
+      "selouane": "Selouane",
+      "arouit": "Arouit"
     }
   },
   "footer": {

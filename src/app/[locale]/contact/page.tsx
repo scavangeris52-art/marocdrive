@@ -33,15 +33,15 @@ export default function ContactPage() {
 
   const contactInfo = [
     { icon: FaPhone, label: '+212 6 61 23 45 67', href: 'tel:+212661234567' },
-    { icon: FaEnvelope, label: 'contact@rafasurlalune.ma', href: 'mailto:contact@rafasurlalune.ma' },
-    { icon: FaMapMarkerAlt, label: '123 Av. Mohammed V, Gueliz, Marrakech 40000', href: '#' },
+    { icon: FaEnvelope, label: 'contact@mimounrifcar.ma', href: 'mailto:contact@mimounrifcar.ma' },
+    { icon: FaMapMarkerAlt, label: '15 Bd Mohammed V, Centre-ville, Nador 62000', href: '#' },
     { icon: FaClock, label: '08:00–20:00 tous les jours', href: '#' },
   ]
 
   return (
     <div className="min-h-screen bg-[#faf8f4]">
       <section className="bg-[#0a1628] py-16 text-center">
-        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-2">RafaSurLaLune</p>
+        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-2">MimounRifCar</p>
         <h1 className="font-['Lora'] text-4xl md:text-5xl font-bold text-white">{t('title')}</h1>
         <GoldLine />
       </section>

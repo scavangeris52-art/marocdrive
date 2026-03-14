@@ -33,7 +33,7 @@
   },
   "about": {
     "title": "Our Story",
-    "subtitle": "Born in Marrakech, RafaSurLaLune has been serving travelers and locals since 2016 with a fleet of well-maintained vehicles at transparent prices.",
+    "subtitle": "Born in Nador, MimounRifCar has been serving travelers and locals since 2016 with a fleet of well-maintained vehicles at transparent prices.",
     "values": "Why Choose Us",
     "v1": "Transparent Pricing",
     "v1d": "No hidden fees. The price you see is the price you pay.",
@@ -81,15 +81,18 @@
     "email": "Email",
     "phone": "Phone",
     "notes": "Additional Notes",
+    "widgetTitle": "Book Your Vehicle",
+    "search": "Search",
     "submit": "Submit Request",
     "success": "Request received! We'll confirm within 2 hours.",
     "error": "An error occurred. Please try again.",
     "close": "Close",
     "cities": {
-      "marrakech": "Marrakech",
-      "casablanca": "Casablanca",
-      "agadir": "Agadir",
-      "fes": "Fès"
+      "nador": "Nador",
+      "oujda": "Oujda",
+      "berkane": "Berkane",
+      "selouane": "Selouane",
+      "arouit": "Arouit"
     }
   },
   "footer": {

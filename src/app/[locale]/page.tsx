@@ -1,5 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import Hero from '@/components/Hero'
+import BookingWidget from '@/components/BookingWidget'
 import GoldLine from '@/components/GoldLine'
 import CarCard from '@/components/CarCard'
 import { prisma } from '@/lib/prisma'
@@ -33,6 +34,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero />
+      <BookingWidget />
 
       {/* Stats */}
       <section className="bg-[#0a1628] py-8">

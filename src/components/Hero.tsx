@@ -23,7 +23,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-6">
-          Marrakech, Maroc
+          Nador, Maroc
         </p>
 
         <h1 className="font-['Lora'] text-5xl md:text-7xl font-bold leading-tight mb-2">

@@ -28,7 +28,7 @@ export default function BookingModal({ car, onClose }: BookingModalProps) {
     phone: '',
     pickupDate: '',
     returnDate: '',
-    pickupCity: 'Marrakech',
+    pickupCity: 'nador',
     notes: '',
   })
 
@@ -118,7 +118,7 @@ export default function BookingModal({ car, onClose }: BookingModalProps) {
                 onChange={(e) => setForm({ ...form, pickupCity: e.target.value })}
                 className="w-full border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:border-[#d4a44c]"
               >
-                {(['marrakech', 'casablanca', 'agadir', 'fes'] as const).map((c) => (
+                {(['nador', 'oujda', 'berkane', 'selouane', 'arouit'] as const).map((c) => (
                   <option key={c} value={c}>{t(`cities.${c}`)}</option>
                 ))}
               </select>
