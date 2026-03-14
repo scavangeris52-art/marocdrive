@@ -41,8 +41,8 @@ export default function Footer() {
             <a href="tel:+212661234567" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
               <FaPhone size={12} /> +212 6 61 23 45 67
             </a>
-            <a href="mailto:contact@marocdrive.ma" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
-              <FaEnvelope size={12} /> contact@marocdrive.ma
+            <a href="mailto:contact@rafasurlalune.ma" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
+              <FaEnvelope size={12} /> contact@rafasurlalune.ma
             </a>
             <a
               href="https://wa.me/212661234567"
@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} MarocDrive. {t('rights')}
+        © {new Date().getFullYear()} RafaSurLaLune. {t('rights')}
       </div>
     </footer>
   )

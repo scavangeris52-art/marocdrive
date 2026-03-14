@@ -49,7 +49,7 @@ export default function AdminPage() {
       minHeight: '100vh', background: '#0a1628'
     }}>
       <div style={{ background: 'white', padding: '40px', width: '100%', maxWidth: '400px' }}>
-        <h1 style={{ fontFamily: 'Georgia, serif', color: '#0a1628', marginBottom: '8px' }}>MarocDrive</h1>
+        <h1 style={{ fontFamily: 'Georgia, serif', color: '#0a1628', marginBottom: '8px' }}>RafaSurLaLune</h1>
         <p style={{ color: '#d4a44c', marginBottom: '24px', fontSize: '14px' }}>Espace Administrateur</p>
         <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div>

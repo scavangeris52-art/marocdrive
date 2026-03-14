@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AdminProviders from './providers'
 
 export const metadata: Metadata = {
-  title: 'Admin — MarocDrive',
+  title: 'Admin — RafaSurLaLune',
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

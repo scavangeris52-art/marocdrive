@@ -16,7 +16,7 @@ export default function FaqPage() {
   return (
     <div className="min-h-screen bg-[#faf8f4]">
       <section className="bg-[#0a1628] py-16 text-center">
-        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-2">MarocDrive</p>
+        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-2">RafaSurLaLune</p>
         <h1 className="font-['Lora'] text-4xl md:text-5xl font-bold text-white">{t('title')}</h1>
         <GoldLine />
       </section>
