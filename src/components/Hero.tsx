@@ -1,17 +1,25 @@
 'use client'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
+import { useState } from 'react'
+import { FaCalendarAlt, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
   const t = useTranslations('hero')
+  const tb = useTranslations('booking')
   const locale = useLocale()
+  const router = useRouter()
+
+  const today = new Date().toISOString().split('T')[0]
+  const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0]
+  const [form, setForm] = useState({ city: 'nador', pickupDate: today, returnDate: tomorrow })
+  const cities = ['nador', 'oujda', 'berkane', 'selouane', 'arouit'] as const
 
   return (
     <section
-      className="relative min-h-[90vh] flex items-center justify-center text-center text-white overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #1a2d4a 100%)',
-      }}
+      className="relative flex items-center justify-center text-center text-white overflow-hidden pb-16 pt-24"
+      style={{ background: 'linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #1a2d4a 100%)' }}
     >
       {/* Decorative bg pattern */}
       <div className="absolute inset-0 opacity-10"
@@ -21,7 +29,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4">
         <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-6">
           Nador, Maroc
         </p>
@@ -44,7 +52,7 @@ export default function Hero() {
           {t('subtitle')}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <Link
             href={`/${locale}/cars`}
             className="px-8 py-4 bg-[#d4a44c] text-[#0a1628] font-bold tracking-widest uppercase text-sm hover:bg-[#c4943c] transition-colors"
@@ -58,11 +66,55 @@ export default function Hero() {
             {t('cta2')}
           </Link>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
-        <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#d4a44c]" />
+        {/* Booking widget */}
+        <div className="bg-white/10 backdrop-blur-sm border border-[#d4a44c]/30 p-6 max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#d4a44c] mb-5">
+            {tb('widgetTitle')}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <div>
+              <label className="flex items-center gap-1 text-xs font-semibold tracking-widest uppercase text-white/60 mb-1">
+                <FaMapMarkerAlt size={10} className="text-[#d4a44c]" /> {tb('city')}
+              </label>
+              <select
+                value={form.city}
+                onChange={(e) => setForm({ ...form, city: e.target.value })}
+                className="w-full border border-white/20 bg-white/10 text-white px-3 py-2.5 text-sm focus:outline-none focus:border-[#d4a44c]"
+              >
+                {cities.map((c) => (
+                  <option key={c} value={c} className="text-[#0a1628]">{tb(`cities.${c}`)}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="flex items-center gap-1 text-xs font-semibold tracking-widest uppercase text-white/60 mb-1">
+                <FaCalendarAlt size={10} className="text-[#d4a44c]" /> {tb('pickup')}
+              </label>
+              <input
+                type="date" min={today} value={form.pickupDate}
+                onChange={(e) => setForm({ ...form, pickupDate: e.target.value })}
+                className="w-full border border-white/20 bg-white/10 text-white px-3 py-2.5 text-sm focus:outline-none focus:border-[#d4a44c]"
+              />
+            </div>
+            <div>
+              <label className="flex items-center gap-1 text-xs font-semibold tracking-widest uppercase text-white/60 mb-1">
+                <FaCalendarAlt size={10} className="text-[#d4a44c]" /> {tb('return')}
+              </label>
+              <input
+                type="date" min={form.pickupDate} value={form.returnDate}
+                onChange={(e) => setForm({ ...form, returnDate: e.target.value })}
+                className="w-full border border-white/20 bg-white/10 text-white px-3 py-2.5 text-sm focus:outline-none focus:border-[#d4a44c]"
+              />
+            </div>
+            <button
+              onClick={() => router.push(`/${locale}/cars`)}
+              className="w-full py-2.5 bg-[#d4a44c] text-[#0a1628] font-bold tracking-widest uppercase text-sm hover:bg-[#c4943c] transition-colors flex items-center justify-center gap-2"
+            >
+              <FaSearch size={13} /> {tb('search')}
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   )

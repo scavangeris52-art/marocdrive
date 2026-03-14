@@ -1,6 +1,5 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import Hero from '@/components/Hero'
-import BookingWidget from '@/components/BookingWidget'
 import GoldLine from '@/components/GoldLine'
 import CarCard from '@/components/CarCard'
 import { prisma } from '@/lib/prisma'
@@ -34,7 +33,6 @@ export default async function HomePage() {
   return (
     <div>
       <Hero />
-      <BookingWidget />
 
       {/* Stats */}
       <section className="bg-[#0a1628] py-8">
@@ -49,24 +47,22 @@ export default async function HomePage() {
       </section>
 
       {/* Featured Cars */}
-      {cars.length > 0 && (
-        <section className="py-20 bg-[#faf8f4]">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] text-center mb-2">
-              {t('cars.title')}
-            </p>
-            <h2 className="font-['Lora'] text-3xl md:text-4xl font-bold text-[#0a1628] text-center mb-2">
-              {t('cars.title')}
-            </h2>
-            <GoldLine />
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cars.map((car) => (
-                <CarCard key={car.id} car={car} locale={locale} />
-              ))}
-            </div>
+      <section className="py-20 bg-[#faf8f4]">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] text-center mb-2">
+            {t('cars.title')}
+          </p>
+          <h2 className="font-['Lora'] text-3xl md:text-4xl font-bold text-[#0a1628] text-center mb-2">
+            {t('cars.title')}
+          </h2>
+          <GoldLine />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cars.map((car) => (
+              <CarCard key={car.id} car={car} locale={locale} />
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-[#0a1628]">
