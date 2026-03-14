@@ -62,6 +62,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/40">
         © {new Date().getFullYear()} MimounRifCar. {t('rights')}
+        <a href="/admin" className="ml-3 text-white/10 hover:text-white/30 transition-colors" aria-label="Admin">·</a>
       </div>
     </footer>
   )

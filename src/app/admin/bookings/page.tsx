@@ -71,7 +71,7 @@ export default function AdminBookingsPage() {
     <div>
       <div style={s.bar}>
         <h2 style={{ color: 'white', margin: 0, fontFamily: 'Georgia, serif', fontSize: '18px' }}>
-          <span style={{ color: '#d4a44c' }}>Maroc</span>Drive Admin
+          <span style={{ color: '#d4a44c' }}>Mimoun</span>RifCar Admin
         </h2>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <a href="/admin" style={s.navLink}>Dashboard</a>

@@ -18,17 +18,25 @@ export async function POST(req: NextRequest) {
     const data = await req.json()
     const { name, email, phone, pickupDate, returnDate, pickupCity, carId, notes, lang } = data
 
+    // Calcul automatique du prix total
+    const car = await prisma.car.findUnique({ where: { id: parseInt(carId) } })
+    const pickup = new Date(pickupDate)
+    const returnD = new Date(returnDate)
+    const days = Math.max(1, Math.ceil((returnD.getTime() - pickup.getTime()) / (1000 * 60 * 60 * 24)))
+    const totalPrice = days * (car?.price || 0)
+
     const booking = await prisma.booking.create({
       data: {
         name,
         email,
         phone,
-        pickupDate: new Date(pickupDate),
-        returnDate: new Date(returnDate),
-        pickupCity: pickupCity || 'Marrakech',
+        pickupDate: pickup,
+        returnDate: returnD,
+        pickupCity: pickupCity || 'Nador',
         carId: parseInt(carId),
         notes: notes || '',
-        lang: lang || 'en',
+        lang: lang || 'fr',
+        totalPrice,
       },
     })
     return NextResponse.json(booking, { status: 201 })
