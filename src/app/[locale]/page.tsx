@@ -1,9 +1,8 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations, getLocale } from 'next-intl/server'
 import Hero from '@/components/Hero'
 import GoldLine from '@/components/GoldLine'
 import CarCard from '@/components/CarCard'
 import { prisma } from '@/lib/prisma'
-import { getLocale } from 'next-intl/server'
 
 async function getFeaturedCars() {
   try {
@@ -14,7 +13,7 @@ async function getFeaturedCars() {
 }
 
 export default async function HomePage() {
-  const t = useTranslations()
+  const t = await getTranslations()
   const locale = await getLocale()
   const cars = await getFeaturedCars()
 

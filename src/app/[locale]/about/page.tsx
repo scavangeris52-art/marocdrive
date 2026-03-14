@@ -1,8 +1,8 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import GoldLine from '@/components/GoldLine'
 
-export default function AboutPage() {
-  const t = useTranslations('about')
+export default async function AboutPage() {
+  const t = await getTranslations('about')
 
   const values = [
     { title: t('v1'), desc: t('v1d'), icon: '💎' },
