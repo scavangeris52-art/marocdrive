@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-40 bg-[#0a1628] shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href={`/${locale}`} className="text-xl font-bold tracking-widest text-white uppercase">
-          <span className="text-[#d4a44c]">Maroc</span>Drive
+          <span className="text-[#d4a44c]">Rafa</span>SurLaLune
         </Link>
 
         {/* Desktop */}
