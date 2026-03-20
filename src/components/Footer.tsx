@@ -8,25 +8,25 @@ export default function Footer() {
   const locale = useLocale()
 
   return (
-    <footer className="bg-[#0a1628] border-t-2 border-[#d4a44c] mt-0">
+    <footer className="bg-[#0d0d0d] border-t-2 border-[#cc0000] mt-0">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
         <div>
-          <h3 className="text-xl font-bold tracking-widest text-white uppercase mb-2">
-            <span className="text-[#d4a44c]">Mimoun</span>RifCar
+          <h3 className="text-white uppercase mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.6rem', letterSpacing: '0.15em' }}>
+            <span className="text-[#cc0000]">Mimoun</span>RifCar
           </h3>
           <p className="text-white/60 text-sm">{t('tagline')}</p>
         </div>
 
         {/* Links */}
         <div>
-          <h4 className="text-xs font-semibold tracking-widest uppercase text-[#d4a44c] mb-4">Navigation</h4>
+          <h4 className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-4">Navigation</h4>
           <div className="flex flex-col gap-2">
             {(['home', 'cars', 'about', 'contact', 'faq'] as const).map((key) => (
               <Link
                 key={key}
                 href={`/${locale}/${key === 'home' ? '' : key}`}
-                className="text-sm text-white/60 hover:text-[#d4a44c] transition-colors"
+                className="text-sm text-white/60 hover:text-[#cc0000] transition-colors"
               >
                 {tn(key)}
               </Link>
@@ -36,19 +36,19 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-xs font-semibold tracking-widest uppercase text-[#d4a44c] mb-4">Contact</h4>
+          <h4 className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-4">Contact</h4>
           <div className="flex flex-col gap-2 text-sm text-white/60">
-            <a href="tel:+212661234567" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
+            <a href="tel:+212661234567" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
               <FaPhone size={12} /> +212 6 61 23 45 67
             </a>
-            <a href="mailto:contact@mimounrifcar.ma" className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors">
+            <a href="mailto:contact@mimounrifcar.ma" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
               <FaEnvelope size={12} /> contact@mimounrifcar.ma
             </a>
             <a
               href="https://wa.me/212661234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[#d4a44c] transition-colors"
+              className="flex items-center gap-2 hover:text-[#cc0000] transition-colors"
             >
               <FaWhatsapp size={12} /> WhatsApp
             </a>

@@ -29,7 +29,7 @@ export default function CarCard({ car, onBook, locale }: CarCardProps) {
   const t = useTranslations('cars')
 
   return (
-    <div className="bg-white border border-gray-100 hover:border-[#d4a44c]/40 hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-[#1a1a1a] border border-white/10 hover:border-[#cc0000]/50 hover:shadow-xl hover:shadow-[#cc0000]/10 transition-all duration-300 group">
       <div className="relative overflow-hidden h-52">
         <Image
           src={car.image}
@@ -39,19 +39,19 @@ export default function CarCard({ car, onBook, locale }: CarCardProps) {
           unoptimized
         />
         <div className="absolute top-3 left-3">
-          <span className="px-2 py-1 bg-[#0a1628] text-[#d4a44c] text-xs font-semibold tracking-widest uppercase">
+          <span className="px-2 py-1 bg-[#0d0d0d] text-[#cc0000] text-xs font-semibold tracking-widest uppercase">
             {t(car.category as any)}
           </span>
         </div>
       </div>
 
       <div className="p-5">
-        <h3 className="font-['Lora'] text-lg font-bold text-[#0a1628]">
+        <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }} className="text-xl text-white">
           {car.brand} {car.model}
         </h3>
-        <p className="text-sm text-gray-400 mb-3">{car.year}</p>
+        <p className="text-sm text-white/40 mb-3">{car.year}</p>
 
-        <div className="flex items-center gap-3 text-xs text-gray-500 mb-4 flex-wrap">
+        <div className="flex items-center gap-3 text-xs text-white/50 mb-4 flex-wrap">
           <span className="flex items-center gap-1">
             <FaCog size={10} /> {t(car.transmission as any)}
           </span>
@@ -70,12 +70,12 @@ export default function CarCard({ car, onBook, locale }: CarCardProps) {
 
         <div className="flex items-center justify-between">
           <div>
-            <span className="text-2xl font-bold text-[#d4a44c]">{car.price}</span>
-            <span className="text-xs text-gray-400 ml-1">MAD{t('perDay')}</span>
+            <span className="text-2xl font-bold text-[#cc0000]">{car.price}</span>
+            <span className="text-xs text-white/40 ml-1">MAD{t('perDay')}</span>
           </div>
           <button
             onClick={() => onBook?.(car)}
-            className="px-4 py-2 bg-[#0a1628] text-[#d4a44c] text-xs font-semibold tracking-widest uppercase hover:bg-[#d4a44c] hover:text-[#0a1628] transition-colors"
+            className="px-4 py-2 bg-[#cc0000] text-white text-xs font-semibold tracking-widest uppercase hover:bg-[#aa0000] transition-colors"
           >
             {t('bookNow')}
           </button>

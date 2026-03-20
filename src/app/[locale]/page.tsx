@@ -35,11 +35,11 @@ export default async function HomePage() {
       <Hero />
 
       {/* Stats */}
-      <section className="bg-[#0a1628] py-8">
+      <section className="bg-[#0d0d0d] border-y border-[#cc0000]/20 py-8">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <div key={i} className="text-center">
-              <p className="text-[#d4a44c] font-bold text-xl">{s.label.split(' ')[0]}</p>
+              <p className="text-[#cc0000] font-bold text-xl">{s.label.split(' ')[0]}</p>
               <p className="text-white/60 text-xs tracking-widest uppercase">{s.label.split(' ').slice(1).join(' ')}</p>
             </div>
           ))}
@@ -47,12 +47,12 @@ export default async function HomePage() {
       </section>
 
       {/* Featured Cars */}
-      <section className="py-20 bg-[#faf8f4]">
+      <section className="py-20 bg-[#111111]">
         <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] text-center mb-2">
+          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#cc0000] text-center mb-2">
             {t('cars.title')}
           </p>
-          <h2 className="font-['Lora'] text-3xl md:text-4xl font-bold text-[#0a1628] text-center mb-2">
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }} className="text-4xl md:text-5xl text-white text-center mb-2">
             {t('cars.title')}
           </h2>
           <GoldLine />
@@ -65,23 +65,23 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-[#0a1628]">
+      <section className="py-20 bg-[#0d0d0d]">
         <div className="max-w-5xl mx-auto px-4">
-          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] text-center mb-2">
+          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#cc0000] text-center mb-2">
             {t('testimonials')}
           </p>
           <GoldLine />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((test, i) => (
-              <div key={i} className="bg-white/5 p-6 border border-[#d4a44c]/20">
+              <div key={i} className="bg-white/5 p-6 border border-[#cc0000]/20">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-[#d4a44c] text-sm">★</span>
+                    <span key={j} className="text-[#cc0000] text-sm">★</span>
                   ))}
                 </div>
                 <p className="text-white/70 text-sm italic mb-4">"{test.text}"</p>
                 <p className="text-white font-semibold text-sm">{test.name}</p>
-                <p className="text-[#d4a44c] text-xs">{test.city}</p>
+                <p className="text-[#cc0000] text-xs">{test.city}</p>
               </div>
             ))}
           </div>

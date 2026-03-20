@@ -19,10 +19,10 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-40 bg-[#0a1628] shadow-lg">
+    <nav className="sticky top-0 z-40 bg-[#0d0d0d] border-b border-[#cc0000]/30 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href={`/${locale}`} className="text-xl font-bold tracking-widest text-white uppercase">
-          <span className="text-[#d4a44c]">Mimoun</span>RifCar
+        <Link href={`/${locale}`} className="tracking-widest text-white uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.6rem', letterSpacing: '0.15em' }}>
+          <span className="text-[#cc0000]">Mimoun</span>RifCar
         </Link>
 
         {/* Desktop */}
@@ -31,7 +31,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-semibold tracking-widest uppercase text-white/80 hover:text-[#d4a44c] transition-colors"
+              className="text-sm font-semibold tracking-widest uppercase text-white/80 hover:text-[#cc0000] transition-colors"
             >
               {l.label}
             </Link>
@@ -47,13 +47,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#0a1628] border-t border-[#d4a44c]/20 px-4 pb-4">
+        <div className="md:hidden bg-[#0d0d0d] border-t border-[#cc0000]/20 px-4 pb-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2 text-sm font-semibold tracking-widest uppercase text-white/80 hover:text-[#d4a44c] transition-colors"
+              className="block py-2 text-sm font-semibold tracking-widest uppercase text-white/80 hover:text-[#cc0000] transition-colors"
             >
               {l.label}
             </Link>
