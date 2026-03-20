@@ -35,7 +35,7 @@ export default function ContactPage() {
     { icon: FaPhone, label: '+212 6 67 42 25 52', href: 'tel:+212667422552' },
     { icon: FaPhone, label: '+212 6 27 56 79 77', href: 'tel:+212627567977' },
     { icon: FaEnvelope, label: 'contact@mimounrifcar.ma', href: 'mailto:contact@mimounrifcar.ma' },
-    { icon: FaMapMarkerAlt, label: 'Bouyafar 62022, Maroc', href: 'https://maps.google.com/?q=Bouyafar+62022+Maroc' },
+    { icon: FaMapMarkerAlt, label: 'Bouyafar 62022, Maroc', href: 'https://maps.google.com/?q=35.2530031,-3.1145019' },
     { icon: FaClock, label: '08:00–20:00 tous les jours', href: '#' },
   ]
 
@@ -142,7 +142,7 @@ export default function ContactPage() {
             </h3>
             <div className="border border-[#cc0000]/20 overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-2.93!3d35.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7581b5d24d0a4b%3A0x0!2sBouyafar%2C+62022%2C+Maroc!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma&q=Bouyafar+62022+Maroc"
+                src="https://maps.google.com/maps?q=35.2530031,-3.1145019&z=19&output=embed"
                 width="100%"
                 height="220"
                 style={{ border: 0, display: 'block' }}
@@ -153,7 +153,7 @@ export default function ContactPage() {
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Bouyafar+62022+Maroc"
+              href="https://maps.google.com/?q=35.2530031,-3.1145019"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 flex items-center gap-2 text-xs text-white/40 hover:text-[#cc0000] transition-colors"
