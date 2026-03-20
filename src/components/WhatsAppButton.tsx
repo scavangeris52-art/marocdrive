@@ -2,7 +2,7 @@
 import { FaWhatsapp } from 'react-icons/fa'
 
 export default function WhatsAppButton() {
-  const whatsapp = '+212661234567'
+  const whatsapp = '+212667422552'
   const message = encodeURIComponent('Bonjour, je souhaite louer une voiture.')
   return (
     <a

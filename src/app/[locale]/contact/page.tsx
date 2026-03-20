@@ -32,7 +32,8 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    { icon: FaPhone, label: '+212 6 61 23 45 67', href: 'tel:+212661234567' },
+    { icon: FaPhone, label: '+212 6 67 42 25 52', href: 'tel:+212667422552' },
+    { icon: FaPhone, label: '+212 6 27 56 79 77', href: 'tel:+212627567977' },
     { icon: FaEnvelope, label: 'contact@mimounrifcar.ma', href: 'mailto:contact@mimounrifcar.ma' },
     { icon: FaMapMarkerAlt, label: '15 Bd Mohammed V, Centre-ville, Nador 62000', href: '#' },
     { icon: FaClock, label: '08:00–20:00 tous les jours', href: '#' },
@@ -122,7 +123,7 @@ export default function ContactPage() {
             <p className="text-xs font-semibold tracking-widest uppercase text-[#d4a44c] mb-3">WhatsApp</p>
             <p className="text-white/70 text-sm mb-4">Pour une réponse immédiate, contactez-nous sur WhatsApp.</p>
             <a
-              href="https://wa.me/212661234567"
+              href="https://wa.me/212667422552"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-5 py-2 bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20ba57] transition-colors"

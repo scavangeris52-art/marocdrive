@@ -38,14 +38,17 @@ export default function Footer() {
         <div>
           <h4 className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-4">Contact</h4>
           <div className="flex flex-col gap-2 text-sm text-white/60">
-            <a href="tel:+212661234567" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
-              <FaPhone size={12} /> +212 6 61 23 45 67
+            <a href="tel:+212667422552" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
+              <FaPhone size={12} /> +212 6 67 42 25 52
+            </a>
+            <a href="tel:+212627567977" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
+              <FaPhone size={12} /> +212 6 27 56 79 77
             </a>
             <a href="mailto:contact@mimounrifcar.ma" className="flex items-center gap-2 hover:text-[#cc0000] transition-colors">
               <FaEnvelope size={12} /> contact@mimounrifcar.ma
             </a>
             <a
-              href="https://wa.me/212661234567"
+              href="https://wa.me/212667422552"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-[#cc0000] transition-colors"
