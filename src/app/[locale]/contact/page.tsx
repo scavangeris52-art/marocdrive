@@ -35,15 +35,15 @@ export default function ContactPage() {
     { icon: FaPhone, label: '+212 6 67 42 25 52', href: 'tel:+212667422552' },
     { icon: FaPhone, label: '+212 6 27 56 79 77', href: 'tel:+212627567977' },
     { icon: FaEnvelope, label: 'contact@mimounrifcar.ma', href: 'mailto:contact@mimounrifcar.ma' },
-    { icon: FaMapMarkerAlt, label: '15 Bd Mohammed V, Centre-ville, Nador 62000', href: '#' },
+    { icon: FaMapMarkerAlt, label: 'Bouyafar 62022, Maroc', href: 'https://maps.google.com/?q=Bouyafar+62022+Maroc' },
     { icon: FaClock, label: '08:00–20:00 tous les jours', href: '#' },
   ]
 
   return (
-    <div className="min-h-screen bg-[#faf8f4]">
-      <section className="bg-[#0a1628] py-16 text-center">
-        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#d4a44c] mb-2">MimounRifCar</p>
-        <h1 className="font-['Lora'] text-4xl md:text-5xl font-bold text-white">{t('title')}</h1>
+    <div className="min-h-screen bg-[#111111]">
+      <section className="bg-[#0d0d0d] py-16 text-center border-b border-[#cc0000]/20">
+        <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#cc0000] mb-2">MimounRifCar</p>
+        <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }} className="text-5xl text-white">{t('title')}</h1>
         <GoldLine />
       </section>
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
           {success ? (
             <div className="text-center py-12">
               <div className="text-5xl mb-4">✅</div>
-              <p className="text-[#0a1628] font-semibold text-lg">{t('success')}</p>
+              <p className="text-white font-semibold text-lg">{t('success')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 { field: 'phone', type: 'tel' },
               ].map(({ field, type }) => (
                 <div key={field}>
-                  <label className="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-1">
+                  <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-1">
                     {t(field as any)}
                   </label>
                   <input
@@ -71,12 +71,12 @@ export default function ContactPage() {
                     type={type}
                     value={(form as any)[field]}
                     onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                    className="w-full border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:border-[#d4a44c]"
+                    className="w-full border border-white/10 px-3 py-2 text-sm bg-white/5 text-white focus:outline-none focus:border-[#cc0000]"
                   />
                 </div>
               ))}
               <div>
-                <label className="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-1">
+                <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-1">
                   {t('message')}
                 </label>
                 <textarea
@@ -84,14 +84,14 @@ export default function ContactPage() {
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:border-[#d4a44c] resize-none"
+                  className="w-full border border-white/10 px-3 py-2 text-sm bg-white/5 text-white focus:outline-none focus:border-[#cc0000] resize-none"
                 />
               </div>
-              {error && <p className="text-red-500 text-sm">{error}</p>}
+              {error && <p className="text-red-400 text-sm">{error}</p>}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-[#d4a44c] text-[#0a1628] font-bold tracking-widest uppercase text-sm hover:bg-[#c4943c] transition-colors disabled:opacity-50"
+                className="w-full py-3 bg-[#cc0000] text-white font-bold tracking-widest uppercase text-sm hover:bg-[#aa0000] transition-colors disabled:opacity-50"
               >
                 {loading ? '...' : t('send')}
               </button>
@@ -102,7 +102,7 @@ export default function ContactPage() {
         {/* Info */}
         <div className="space-y-6">
           <div>
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-[#d4a44c] mb-4">
+            <h3 className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-4">
               {t('address')} & {t('hours')}
             </h3>
             <div className="space-y-3">
@@ -110,17 +110,20 @@ export default function ContactPage() {
                 <a
                   key={i}
                   href={item.href}
-                  className="flex items-start gap-3 text-sm text-gray-600 hover:text-[#d4a44c] transition-colors"
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="flex items-start gap-3 text-sm text-white/60 hover:text-[#cc0000] transition-colors"
                 >
-                  <item.icon className="text-[#d4a44c] mt-0.5 flex-shrink-0" size={14} />
+                  <item.icon className="text-[#cc0000] mt-0.5 flex-shrink-0" size={14} />
                   {item.label}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="bg-[#0a1628] p-6 text-white">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#d4a44c] mb-3">WhatsApp</p>
+          {/* WhatsApp */}
+          <div className="bg-[#0d0d0d] border border-[#cc0000]/20 p-6 text-white">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-3">WhatsApp</p>
             <p className="text-white/70 text-sm mb-4">Pour une réponse immédiate, contactez-nous sur WhatsApp.</p>
             <a
               href="https://wa.me/212667422552"
@@ -129,6 +132,33 @@ export default function ContactPage() {
               className="inline-block px-5 py-2 bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20ba57] transition-colors"
             >
               Ouvrir WhatsApp
+            </a>
+          </div>
+
+          {/* Google Maps */}
+          <div>
+            <h3 className="text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-3">
+              Notre localisation
+            </h3>
+            <div className="border border-[#cc0000]/20 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-2.93!3d35.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7581b5d24d0a4b%3A0x0!2sBouyafar%2C+62022%2C+Maroc!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma&q=Bouyafar+62022+Maroc"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localisation Mimoun Rif Car — Bouyafar, Maroc"
+              />
+            </div>
+            <a
+              href="https://maps.google.com/?q=Bouyafar+62022+Maroc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex items-center gap-2 text-xs text-white/40 hover:text-[#cc0000] transition-colors"
+            >
+              <FaMapMarkerAlt size={11} /> Ouvrir dans Google Maps
             </a>
           </div>
         </div>
