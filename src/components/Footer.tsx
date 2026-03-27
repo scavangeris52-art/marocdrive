@@ -64,6 +64,11 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/40">
+        <div className="mb-2">
+          <Link href={`/${locale}/legal/terms`} className="hover:text-[#cc0000] transition-colors mx-2">CGU</Link>
+          <span className="text-white/20">|</span>
+          <Link href={`/${locale}/legal/privacy`} className="hover:text-[#cc0000] transition-colors mx-2">Confidentialité</Link>
+        </div>
         © {new Date().getFullYear()} MimounRifCar. {t('rights')}
         <a href="/admin" className="ml-3 text-white/10 hover:text-white/30 transition-colors" aria-label="Admin">·</a>
       </div>

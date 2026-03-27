@@ -12,22 +12,28 @@ async function getFeaturedCars() {
   }
 }
 
+async function getTestimonials() {
+  try {
+    return await prisma.testimonial.findMany({
+      where: { active: true },
+      orderBy: { createdAt: 'desc' },
+    })
+  } catch {
+    return []
+  }
+}
+
 export default async function HomePage() {
   const t = await getTranslations()
   const locale = await getLocale()
   const cars = await getFeaturedCars()
+  const testimonials = await getTestimonials()
 
   const stats = [
     { label: t('stats.vehicles') },
     { label: t('stats.clients') },
     { label: t('stats.years') },
     { label: t('stats.support') },
-  ]
-
-  const testimonials = [
-    { name: 'Pierre M.', city: 'Paris, France', text: 'Impeccable service! Clean car and very competitive pricing. 100% recommend.' },
-    { name: 'Emily R.', city: 'London, UK', text: 'Very professional. The car was in perfect condition and the process was seamless.' },
-    { name: 'Carlos D.', city: 'Madrid, Spain', text: 'Excellent value for money. The team is very responsive and always available.' },
   ]
 
   return (

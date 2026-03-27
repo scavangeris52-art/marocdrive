@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FaCog, FaGasPump, FaUsers, FaSnowflake } from 'react-icons/fa'
+import { useState } from 'react'
 
 interface Car {
   id: number
@@ -27,16 +28,20 @@ interface CarCardProps {
 
 export default function CarCard({ car, onBook, locale }: CarCardProps) {
   const t = useTranslations('cars')
+  const [imgError, setImgError] = useState(false)
+
+  const fallbackSrc = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" fill="%231a1a1a"><rect width="400" height="250"/><text x="50%" y="50%" fill="%23666" font-family="Arial" font-size="16" text-anchor="middle" dy=".3em">Image non disponible</text></svg>')}`
 
   return (
     <div className="bg-[#1a1a1a] border border-white/10 hover:border-[#cc0000]/50 hover:shadow-xl hover:shadow-[#cc0000]/10 transition-all duration-300 group">
       <div className="relative overflow-hidden h-52">
         <Image
-          src={car.image}
+          src={imgError ? fallbackSrc : car.image}
           alt={`${car.brand} ${car.model}`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           unoptimized
+          onError={() => setImgError(true)}
         />
         <div className="absolute top-3 left-3">
           <span className="px-2 py-1 bg-[#0d0d0d] text-[#cc0000] text-xs font-semibold tracking-widest uppercase">

@@ -4,8 +4,9 @@ import bcrypt from 'bcryptjs'
 const prisma = new PrismaClient()
 
 async function main() {
-  // Admin user
-  const hashedPassword = await bcrypt.hash('ChangezCeMotDePasse123!', 12)
+  // Admin user - use password from env var or default for development
+  const adminPassword = process.env.ADMIN_PASSWORD || 'ChangeMeInProduction123!'
+  const hashedPassword = await bcrypt.hash(adminPassword, 12)
   await prisma.user.upsert({
     where: { email: 'admin@marocdrive.ma' },
     update: {},
@@ -133,6 +134,37 @@ async function main() {
       update: { value: setting.value },
       create: setting,
     })
+  }
+
+  // Testimonials
+  await prisma.testimonial.deleteMany({})
+
+  const testimonials = [
+    {
+      name: 'Pierre M.',
+      city: 'Paris, France',
+      text: 'Impeccable service! Clean car and very competitive pricing. 100% recommend.',
+      rating: 5,
+      active: true,
+    },
+    {
+      name: 'Emily R.',
+      city: 'London, UK',
+      text: 'Very professional. The car was in perfect condition and the process was seamless.',
+      rating: 5,
+      active: true,
+    },
+    {
+      name: 'Carlos D.',
+      city: 'Madrid, Spain',
+      text: 'Excellent value for money. The team is very responsive and always available.',
+      rating: 5,
+      active: true,
+    },
+  ]
+
+  for (const testimonial of testimonials) {
+    await prisma.testimonial.create({ data: testimonial })
   }
 
   console.log('✅ Seed terminé avec succès')

@@ -1,0 +1,32 @@
+# MimounRifCar SEO Configuration
+# robots.txt - Crawling instructions for search engines
+
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json
+Disallow: /payment
+
+# Allow specific important routes
+Allow: /en
+Allow: /fr
+Allow: /ar
+Allow: /es
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://mimounrifcar.ma/sitemap.xml
