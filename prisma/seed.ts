@@ -157,8 +157,8 @@ async function main() {
     {
       name: 'Carlos D.',
       city: 'Madrid, Spain',
-      text: 'Excellent value for money. The team is very responsive and always available.',
-      rating: 5,
+      text: 'Good value for money. The team was responsive and helpful.',
+      rating: 4,
       active: true,
     },
   ]

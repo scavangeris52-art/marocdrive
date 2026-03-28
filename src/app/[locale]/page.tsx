@@ -82,7 +82,7 @@ export default async function HomePage() {
               <div key={i} className="bg-white/5 p-6 border border-[#cc0000]/20">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-[#cc0000] text-sm">★</span>
+                    <span key={j} className={`text-sm ${j < test.rating ? 'text-[#cc0000]' : 'text-white/20'}`}>★</span>
                   ))}
                 </div>
                 <p className="text-white/70 text-sm italic mb-4">"{test.text}"</p>
